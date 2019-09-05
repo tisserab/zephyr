@@ -1,0 +1,12 @@
+/*
+ *
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_spi {
+	status = "okay";
+	spi-max-frequency = <2000000>;
+
+};
