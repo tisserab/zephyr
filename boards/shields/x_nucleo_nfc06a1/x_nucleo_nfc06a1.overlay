@@ -5,8 +5,45 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-&arduino_spi {
+&spi1 {
 	status = "okay";
-	spi-max-frequency = <2000000>;
-
+	st25r3916@0 {
+		compatible = "zephyr,nfc-spi";
+		reg = <0>;
+		irq-gpios = <&gpioc 0 0>;
+		spi-max-frequency = <2000000>;
+		label = "ST25R3916";
+	};
 };
+
+/ {
+	nfc_leds {
+		compatible = "gpio-leds";
+		led_a {
+			gpios = <&gpioa 0 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_A";
+		};
+		led_b {
+			gpios = <&gpioa 1 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_B";
+		};
+		led_f {
+			gpios = <&gpioc 1 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_F";
+		};
+		led_v {
+			gpios = <&gpioc 3 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_V";
+		};
+		led_ap2p {
+			gpios = <&gpioc 2 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_AP2P";
+		};
+		led_field {
+			gpios = <&gpioc 13 GPIO_INT_ACTIVE_HIGH>;
+			label = "LED_FIELD";
+		};
+
+	};
+};
+
