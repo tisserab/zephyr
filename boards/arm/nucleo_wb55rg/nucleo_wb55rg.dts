@@ -89,7 +89,7 @@
 	};
 };
 
-arduino_serial: &lpuart1 {
+&lpuart1 {
 	current-speed = <115200>;
 	status = "okay";
 };
@@ -101,6 +101,7 @@ arduino_serial: &lpuart1 {
 &iwdg {
 	status = "okay";
 };
+=======
 
 &flash0 {
 	/*
