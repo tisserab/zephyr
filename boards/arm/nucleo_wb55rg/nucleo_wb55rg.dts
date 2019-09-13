@@ -101,7 +101,6 @@
 &iwdg {
 	status = "okay";
 };
-=======
 
 &flash0 {
 	/*

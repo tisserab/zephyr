@@ -1,8 +1,7 @@
-#
-# Copyright (c) 2018, I-SENSE group of ICCS
+# Copyright (c) 2019, STMicroelectronics
 #
 # SPDX-License-Identifier: Apache-2.0
-#
+
 
 title: NFC module based on Zephyr's NFC SPI driver
 
@@ -10,14 +9,15 @@ description: >
     This binding gives the base representation of a NFC module which use
     Zephyr's SPI driver (e.g. st25r3916).
 
-inherits:
-    !include spi-device.yaml
+compatible: "zephyr,nfc-spi"
+
+include: spi-device.yaml
 
 properties:
-    compatible:
-      constraint: "zephyr,nfc-spi"
-
     irq-gpios:
       type: compound
-      category: required
+      required: true
 
+    cs-gpios:
+      type: phandle-array
+      required: false
