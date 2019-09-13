@@ -12,7 +12,7 @@
 		reg = <0>;
 		irq-gpios = <&arduino_header 0 0>; /* A0 */
 		cs-gpios =  <&arduino_header 16 0>; /* D10 */
-		spi-max-frequency = <2000000>;
+		spi-max-frequency = <5000000>;
 		label = "ST25R3916";
 	};
 };
